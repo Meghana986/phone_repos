@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart Database</title>
+</head>
+
+<body>
+
+<h1>Stored Products</h1>
+
+<div id="data"></div>
+
+<script>
+
+// Get database data
+
+let products = JSON.parse(localStorage.getItem("products")) || [];
+
+let output = "";
+
+products.forEach(product => {
+
+    output += `
+
+        <h3>${product.name}</h3>
+
+        <p>Price: ₹${product.price}</p>
+
+        <hr>
+
+    `;
+});
+
+document.getElementById("data").innerHTML = output;
+
+</script>
+
+</body>
+</html>
